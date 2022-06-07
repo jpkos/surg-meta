@@ -4,20 +4,26 @@ output: html_notebook
 ---
 
 
-```{r}
+```{r, results='hide', message=FALSE}
 library(meta)
 library(esc)
 library(tidyverse)
+library(stargazer)
+```
+Load data
+```{r}
+df <- read.csv('data/time_data.csv')
+```
+Show data. Data has time to completion results for novices and experts from different studies. Original time (Mn and Me) given in seconds.
+```{r}
+head(df, 1)
 ```
 
-```{r}
-data <- read.csv('data/time_data.csv')
-```
 ```{r}
 m.gen <- metagen(TE=g,
                  seTE=SDg,
                  studlab=Author,
-                 data=data,
+                 data=df,
                  sm="SMD",
                  fixed=FALSE,
                  random=TRUE,
@@ -46,7 +52,7 @@ m.cont <- metacont(n.e=Nn,
                    mean.c=Me,
                    sd.c=SDe,
                    studlab=Author,
-                   data=data,
+                   data=df,
                    sm="SMD",
                    method.smd="Hedges",
                    fixed=FALSE,
