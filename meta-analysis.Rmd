@@ -11,7 +11,7 @@ library(tidyverse)
 ```
 
 ```{r}
-data <- read.csv('time_data.csv')
+data <- read.csv('data/time_data.csv')
 ```
 ```{r}
 m.gen <- metagen(TE=g,
