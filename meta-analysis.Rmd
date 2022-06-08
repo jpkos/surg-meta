@@ -35,12 +35,12 @@ m.gen <- metagen(TE=g,
 summary(m.gen)
 ```
 Plot forest
-```{r}
+```{r, fig.width = 10,fig.height=10}
 forest.meta(m.gen,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Time to completion in Surgery")
 dev.print(pdf, "forest_time.pdf", width=8, height=8)
 ```
 Plot drapery
-```{r}
+```{r, fig.width = 10,fig.height=10}
 drapery(m.gen, labels="studlab", type="pval", legend=FALSE)
 ```
 Standardized means
@@ -66,7 +66,7 @@ Summary
 summary(m.cont)
 ```
 Plot forest
-```{r}
+```{r, fig.width = 10,fig.height=10}
 forest.meta(m.cont,sortvar=SMD, prediction=TRUE, prin.tau2=TRUE)
 ```
 
