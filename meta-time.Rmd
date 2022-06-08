@@ -1,0 +1,48 @@
+
+
+# Task time
+
+Task time is the time taken to complete a task. Task can be short like a single knot or some longer complex task.
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(meta)
+library(esc)
+library(tidyverse)
+library(stargazer)
+library(readxl)
+```
+Load data
+```{r}
+df.time <- read_excel('data/surgical_metrics.xlsx', sheet='task_time')
+```
+Show data. Data has time to completion results for novices and experts from different studies. Original time (Mn and Me) given in seconds.
+```{r}
+head(df.time, 1)
+```
+
+```{r}
+m.time <- metagen(TE=g,
+                 seTE=SDg,
+                 studlab=Author,
+                 data=df.time,
+                 sm="SMD",
+                 fixed=FALSE,
+                 random=TRUE,
+                 method.tau="REML",
+                 hakn=TRUE,
+                 title="Time to completion in Surgery")
+```
+```{r}
+summary(m.time)
+```
+Plot forest
+```{r, fig.width = 10, fig.height=5}
+forest.meta(m.time,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Time to completion in Surgery")
+dev.print(pdf, "forest_time.pdf", width=8, height=8)
+```
+Plot drapery
+```{r, fig.width = 10,fig.height=10}
+drapery(m.time, labels="studlab", type="pval", legend=FALSE)
+```
+
+
+

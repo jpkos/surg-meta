@@ -5,12 +5,21 @@ output:
   html_document:
     theme: cosmo
     toc: true
+    toc_float: true
     toc_depth: 2
     fig_caption: true
-    fig_width: 6
-    fig_height: 4
+
 ---
 
-```{r child = "meta-analysis.Rmd"}
+```{r child = "meta-intro.Rmd"}
+
+```
+
+
+```{r child = "meta-time.Rmd"}
+
+```
+
+```{r child = "meta-grasp.Rmd"}
 
 ```

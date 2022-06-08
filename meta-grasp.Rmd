@@ -1,0 +1,47 @@
+
+# Grasps
+
+Grasps are the number of times the surgeon had to grasp something using surgical instruments
+
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(meta)
+library(esc)
+library(tidyverse)
+library(stargazer)
+library(readxl)
+```
+Load data
+```{r}
+df.grasp <- read_excel('data/surgical_metrics.xlsx', sheet='tool_grasps')
+```
+Show data. Data has number of grasp needed to complete a task for novices and experts from different studies. 
+```{r}
+head(df.grasp, 1)
+```
+Run meta-analysis
+```{r}
+m.grasp <- metagen(TE=g,
+                 seTE=SDg,
+                 studlab=Author,
+                 data=df.grasp,
+                 sm="SMD",
+                 fixed=FALSE,
+                 random=TRUE,
+                 method.tau="REML",
+                 hakn=TRUE,
+                 title="Grasping in Surgery")
+```
+```{r}
+summary(m.grasp)
+```
+
+Plot forest
+```{r, fig.width = 10, fig.height=5}
+forest.meta(m.grasp,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Time to completion in Surgery")
+dev.print(pdf, "forest_grasp.pdf", width=8, height=8)
+```
+Plot drapery
+
+```{r, fig.width = 10,fig.height=10}
+#drapery(m.grasp, labels="studlab", type="pval", legend=FALSE)
+```

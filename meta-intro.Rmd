@@ -1,0 +1,57 @@
+
+# Introduction
+
+This notebook will include informal meta-analyses of different metrics and methods
+for evaluating surgical skill. It is informal because it's not based on systematic review,
+and because some studies have been included with very relaxed conditions. For example,
+I have picked the novices and experts without comparing their definitions between studies. 
+Novice = weakest skill group in the study, expert = strongest skill group in the study.
+If a study included more than 2 groups, I picked the weakest (=novice) and strongest (=expert)
+groups' results and discarded the others.
+
+May or may not be turned into more systematic meta-analysis later.
+
+If you know some good studies to be included, feel free to forward them to
+
+jani.koskinen [ at ] uef.fi
+
+Jani Koskinen
+
+Metrics that will be included (Bolded ones have priority)
+
+- **Task time**
+- Tool Path length
+- Tool Velocity
+- Tool Acceleration
+- Tool Curvature
+- **Idle time**
+- **Pupil dilations**
+- **Blinks**
+- **Tool Movement efficiency**
+- **Number of movements**
+- Tool Forces
+- Tool Torques
+- 
+
+Full list of papers and metrics can be found in the excel file shared in the repo:
+
+[add link here]
+
+
+*Last update: 8.6.2022.*
+
+## How results are calculated
+
+1. From each study, extract
+  + Number of trials per group
+  + Means per group (Mn, Me for novices and experts, respectively)
+  + Standard deviations per group (SDn, SDe)
+2. Calculate pooled standard deviation SDpooled
+3. Normalize by calculating Standardized Mean Difference (SDM): |Mn - Me|/SDpooled
+4. Calculate small sample size correction g (link that shows calculation)
+5. Calculate SDg, standard deviation after correction
+
+These values are used as input in the R *meta* package's metagen function.
+
+
+
