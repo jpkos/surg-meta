@@ -1,5 +1,6 @@
 ---
-title: "Surg. Skill meta-analysis"
+title: "How do we measure surgical skill"
+subtitle: "A meta-analysis"
 author: "Jani Koskinen"
 output:
   html_document:
@@ -21,5 +22,9 @@ output:
 ```
 
 ```{r child = "meta-grasp.Rmd"}
+
+```
+
+```{r child = "meta-biman.Rmd"}
 
 ```
