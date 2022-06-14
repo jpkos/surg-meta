@@ -32,10 +32,3 @@ Plot forest
 forest.meta(m.biman,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Bimanual dexterity in Surgery")
 dev.print(pdf, "figures/forest_biman.pdf", width=8, height=8)
 ```
-<<<<<<< HEAD
-=======
-Plot drapery
-```{r, fig.width = 10,fig.height=10}
-drapery(m.biman, labels="studlab", type="pval", legend=FALSE)
-```
->>>>>>> 277b935df9accd3b38423a3d65de13e46b398985
