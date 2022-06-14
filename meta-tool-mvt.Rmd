@@ -3,6 +3,8 @@
 
 Number of tool movements made during the task. Note: I have included here the grasp results from our paper (and other studies that analyzed only one type of action/movement)
 
+## Results
+
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
 library(esc)
@@ -36,3 +38,6 @@ Plot forest
 forest.meta(m.toolmvt,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool movements in Surgery")
 dev.print(pdf, "figures/forest_toolmvt.pdf", width=8, height=8)
 ```
+
+## Discussion
+Tool movements are perhaps the second most often reported metric. Different papers measure, analyze and report them differently. Often connected to "movement efficiency".

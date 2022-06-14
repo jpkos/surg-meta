@@ -2,7 +2,9 @@
 # Introduction
 
 This notebook will include informal meta-analyses of different metrics and methods
-for evaluating surgical skill. It is informal because it's not based on systematic review,
+for evaluating surgical skill. 
+
+It is informal because it's not based on systematic review,
 and because some studies have been included with very relaxed conditions. For example,
 I have picked the novices and experts without comparing their definitions between studies. 
 Novice = weakest skill group in the study, expert = strongest skill group in the study.
@@ -17,7 +19,7 @@ jani.koskinen [ at ] uef.fi
 
 Jani Koskinen
 
-Metrics that will be included (Bolded ones have priority)
+Metrics that will be most likely included (Bolded ones have priority)
 
 - **Task time**
 - Tool Path length

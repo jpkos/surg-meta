@@ -3,6 +3,8 @@
 # Task time
 
 Task time is the time taken to complete a task. Task can be short like a single knot or some longer complex task.
+
+## Results
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
 library(esc)
@@ -41,7 +43,9 @@ dev.print(pdf, "figures/forest_time.pdf", width=8, height=8)
 
 
 ```
+## Discussion
 
+Time to completion is by far the most often reported metric. It is often reported even when it is not the main focus of the study.
 
 
 

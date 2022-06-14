@@ -1,6 +1,8 @@
 # Task-evoked pupil dilation
 
 Pupil size measures cognitive workload, stress, and million other things.
+
+## Results
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
 library(esc)
@@ -33,3 +35,9 @@ Plot forest
 forest.meta(m.pupil,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Pupil dilation in Surgery")
 dev.print(pdf, "figures/forest_pupil.pdf", width=8, height=8)
 ```
+
+
+## Discussion
+Prior research indicates that higher stress/cognitive workload -> larger pupil size. This is seen in most studies. In Bednarik et al. (2018), the effect is reversed. For that study, I picked needle piercing segment (because it was quaranteed to have un-interrupted visual contact from the participant). It can be that experts focused more on this, and had larger cognitive workload and pupil dilations.
+
+Not that many studies that have measured pupil dilations and compared surgical novices and experts directly. Some used measures like ICA or Entropy (not included here). Pupil dilations used in other fields more often.

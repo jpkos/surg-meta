@@ -1533,23 +1533,24 @@ div.tocify {
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <p>This notebook will include informal meta-analyses of different
-metrics and methods for evaluating surgical skill. It is informal
-because it’s not based on systematic review, and because some studies
-have been included with very relaxed conditions. For example, I have
-picked the novices and experts without comparing their definitions
-between studies. Novice = weakest skill group in the study, expert =
-strongest skill group in the study. If a study included more than 2
-groups, I picked the weakest (=novice) and strongest (=expert) groups’
-results and discarded the others. If a study included more than 1 task,
-or several sub-tasks, I picked the one with largest difference between
-groups.</p>
+metrics and methods for evaluating surgical skill.</p>
+<p>It is informal because it’s not based on systematic review, and
+because some studies have been included with very relaxed conditions.
+For example, I have picked the novices and experts without comparing
+their definitions between studies. Novice = weakest skill group in the
+study, expert = strongest skill group in the study. If a study included
+more than 2 groups, I picked the weakest (=novice) and strongest
+(=expert) groups’ results and discarded the others. If a study included
+more than 1 task, or several sub-tasks, I picked the one with largest
+difference between groups.</p>
 <p>May or may not be turned into more systematic meta-analysis
 later.</p>
 <p>If you know some good studies to be included, feel free to forward
 them to</p>
 <p>jani.koskinen [ at ] uef.fi</p>
 <p>Jani Koskinen</p>
-<p>Metrics that will be included (Bolded ones have priority)</p>
+<p>Metrics that will be most likely included (Bolded ones have
+priority)</p>
 <ul>
 <li><strong>Task time</strong></li>
 <li>Tool Path length</li>
@@ -1597,6 +1598,8 @@ metagen function.</p>
 <h1>Task time</h1>
 <p>Task time is the time taken to complete a task. Task can be short
 like a single knot or some longer complex task.</p>
+<div id="results" class="section level2">
+<h2>Results</h2>
 <p>Load data</p>
 <pre class="r"><code>df.time &lt;- read_excel(&#39;data/surgical_metrics.xlsx&#39;, sheet=&#39;task_time&#39;)</code></pre>
 <p>Show data. Data has time to completion results for novices and
@@ -1667,10 +1670,18 @@ seconds.</p>
 <pre><code>## png 
 ##   2</code></pre>
 </div>
+<div id="discussion" class="section level2">
+<h2>Discussion</h2>
+<p>Time to completion is by far the most often reported metric. It is
+often reported even when it is not the main focus of the study.</p>
+</div>
+</div>
 <div id="grasps" class="section level1">
 <h1>Grasps</h1>
 <p>Grasps are the number of times the surgeon had to grasp something
 using surgical instruments</p>
+<div id="results-1" class="section level2">
+<h2>Results</h2>
 <p>Load data</p>
 <pre class="r"><code>df.grasp &lt;- read_excel(&#39;data/surgical_metrics.xlsx&#39;, sheet=&#39;tool_grasps&#39;)</code></pre>
 <p>Show data. Data has number of grasp needed to complete a task for
@@ -1723,11 +1734,19 @@ novices and experts from different studies.</p>
 <pre><code>## png 
 ##   2</code></pre>
 </div>
+<div id="discussion-1" class="section level2">
+<h2>Discussion</h2>
+<p>Not many papers that focused on grasps. I have included thus the
+grasp results also to the “Tool movements” analysis.</p>
+</div>
+</div>
 <div id="bimanual-dexterity" class="section level1">
 <h1>Bimanual dexterity</h1>
 <p>Bimanual dexterity is a measure of how well the surgeon is able to
 use both hands at the same time. Note that there are many different ways
 for calculating “ability to use both hands simultaneously.”</p>
+<div id="results-2" class="section level2">
+<h2>Results</h2>
 <p>Load data</p>
 <pre class="r"><code>df.biman &lt;- read_excel(&#39;data/surgical_metrics.xlsx&#39;, sheet=&#39;tool_bimanual&#39;)</code></pre>
 <pre class="r"><code>m.biman &lt;- metagen(TE=g,
@@ -1775,10 +1794,18 @@ for calculating “ability to use both hands simultaneously.”</p>
 <pre><code>## png 
 ##   2</code></pre>
 </div>
+<div id="discussion-2" class="section level2">
+<h2>Discussion</h2>
+<p>Analysis of bimanual dexterity is made harder because there are so
+many different definitions for it.</p>
+</div>
+</div>
 <div id="task-evoked-pupil-dilation" class="section level1">
 <h1>Task-evoked pupil dilation</h1>
 <p>Pupil size measures cognitive workload, stress, and million other
 things.</p>
+<div id="results-3" class="section level2">
+<h2>Results</h2>
 <p>Load data</p>
 <pre class="r"><code>df.pupil &lt;- read_excel(&#39;data/surgical_metrics.xlsx&#39;, sheet=&#39;pupil_dilation&#39;)</code></pre>
 <p>Run meta-analysis</p>
@@ -1828,11 +1855,27 @@ things.</p>
 <pre><code>## png 
 ##   2</code></pre>
 </div>
+<div id="discussion-3" class="section level2">
+<h2>Discussion</h2>
+<p>Prior research indicates that higher stress/cognitive workload -&gt;
+larger pupil size. This is seen in most studies. In Bednarik et
+al. (2018), the effect is reversed. For that study, I picked needle
+piercing segment (because it was quaranteed to have un-interrupted
+visual contact from the participant). It can be that experts focused
+more on this, and had larger cognitive workload and pupil dilations.</p>
+<p>Not that many studies that have measured pupil dilations and compared
+surgical novices and experts directly. Some used measures like ICA or
+Entropy (not included here). Pupil dilations used in other fields more
+often.</p>
+</div>
+</div>
 <div id="tool-movements" class="section level1">
 <h1>Tool movements</h1>
 <p>Number of tool movements made during the task. Note: I have included
 here the grasp results from our paper (and other studies that analyzed
 only one type of action/movement)</p>
+<div id="results-4" class="section level2">
+<h2>Results</h2>
 <p>Load data</p>
 <pre class="r"><code>df.toolmvt &lt;- read_excel(&#39;data/surgical_metrics.xlsx&#39;, sheet=&#39;tool_movements&#39;)</code></pre>
 <p>Run meta-analysis</p>
@@ -1883,6 +1926,13 @@ only one type of action/movement)</p>
 <pre class="r"><code>dev.print(pdf, &quot;figures/forest_toolmvt.pdf&quot;, width=8, height=8)</code></pre>
 <pre><code>## png 
 ##   2</code></pre>
+</div>
+<div id="discussion-4" class="section level2">
+<h2>Discussion</h2>
+<p>Tool movements are perhaps the second most often reported metric.
+Different papers measure, analyze and report them differently. Often
+connected to “movement efficiency”.</p>
+</div>
 </div>
 
 

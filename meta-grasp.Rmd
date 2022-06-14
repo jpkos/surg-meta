@@ -3,6 +3,7 @@
 
 Grasps are the number of times the surgeon had to grasp something using surgical instruments
 
+## Results
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
 library(esc)
@@ -40,3 +41,6 @@ Plot forest
 forest.meta(m.grasp,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Time to completion in Surgery")
 dev.print(pdf, "figures/forest_grasp.pdf", width=8, height=8)
 ```
+
+## Discussion
+Not many papers that focused on grasps. I have included thus the grasp results also to the "Tool movements" analysis.
