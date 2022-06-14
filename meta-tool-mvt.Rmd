@@ -1,0 +1,38 @@
+
+# Tool movements
+
+Number of tool movements made during the task. Note: I have included here the grasp results from our paper (and other studies that analyzed only one type of action/movement)
+
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(meta)
+library(esc)
+library(tidyverse)
+library(stargazer)
+library(readxl)
+```
+Load data
+```{r}
+df.toolmvt <- read_excel('data/surgical_metrics.xlsx', sheet='tool_movements')
+```
+Run meta-analysis
+```{r}
+m.toolmvt <- metagen(TE=g,
+                 seTE=SDg,
+                 studlab=Author,
+                 data=df.toolmvt,
+                 sm="SMD",
+                 fixed=FALSE,
+                 random=TRUE,
+                 method.tau="REML",
+                 hakn=TRUE,
+                 title="Tool movements in Surgery")
+```
+```{r}
+summary(m.toolmvt)
+```
+
+Plot forest
+```{r, fig.width = 10, fig.height=5}
+forest.meta(m.toolmvt,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool movements in Surgery")
+dev.print(pdf, "figures/forest_toolmvt.pdf", width=8, height=8)
+```
