@@ -16,10 +16,7 @@ Load data
 ```{r}
 df.time <- read_excel('data/surgical_metrics.xlsx', sheet='task_time')
 ```
-Show data. Data has time to completion results for novices and experts from different studies. Original time (Mn and Me) given in seconds.
-```{r}
-head(df.time, 1)
-```
+
 
 ```{r}
 m.time <- metagen(TE=g,
@@ -37,9 +34,9 @@ m.time <- metagen(TE=g,
 summary(m.time)
 ```
 Plot forest
-```{r, fig.width = 10, fig.height=5}
+```{r, fig.width = 10, fig.height=7}
 forest.meta(m.time,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Time to completion in Surgery")
-dev.print(pdf, "figures/forest_time.pdf", width=8, height=8)
+dev.print(pdf, "figures/forest_time.pdf", width=10, height=10)
 
 
 ```
