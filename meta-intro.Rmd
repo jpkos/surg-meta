@@ -38,7 +38,11 @@ Full list of papers and metrics can be found in the excel file shared in the rep
 [Link to Github repo](https://github.com/jpkos/surg-meta)
 
 
+<<<<<<< HEAD
 *Last update: 14.6.2022.*
+=======
+*Last update: 9.6.2022.*
+>>>>>>> 277b935df9accd3b38423a3d65de13e46b398985
 
 ## How results are calculated
 
