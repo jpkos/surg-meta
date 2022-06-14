@@ -40,8 +40,3 @@ Plot forest
 forest.meta(m.grasp,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Time to completion in Surgery")
 dev.print(pdf, "figures/forest_grasp.pdf", width=8, height=8)
 ```
-Plot drapery
-
-```{r, fig.width = 10,fig.height=10}
-#drapery(m.grasp, labels="studlab", type="pval", legend=FALSE)
-```

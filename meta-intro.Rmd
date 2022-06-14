@@ -7,7 +7,7 @@ and because some studies have been included with very relaxed conditions. For ex
 I have picked the novices and experts without comparing their definitions between studies. 
 Novice = weakest skill group in the study, expert = strongest skill group in the study.
 If a study included more than 2 groups, I picked the weakest (=novice) and strongest (=expert)
-groups' results and discarded the others.
+groups' results and discarded the others. If a study included more than 1 task, or several sub-tasks, I picked the one with largest difference between groups.
 
 May or may not be turned into more systematic meta-analysis later.
 
@@ -35,10 +35,10 @@ Metrics that will be included (Bolded ones have priority)
 
 Full list of papers and metrics can be found in the excel file shared in the repo:
 
-[add link here]
+[Link to Github repo](https://github.com/jpkos/surg-meta)
 
 
-*Last update: 9.6.2022.*
+*Last update: 14.6.2022.*
 
 ## How results are calculated
 
