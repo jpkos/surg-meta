@@ -13,12 +13,6 @@ groups' results and discarded the others. If a study included more than 1 task, 
 
 May or may not be turned into more systematic meta-analysis later.
 
-If you know some good studies to be included, feel free to forward them to
-
-jani.koskinen [ at ] uef.fi
-
-Jani Koskinen
-
 Metrics that will be most likely included (Bolded ones have priority)
 
 - **Task time**
@@ -40,6 +34,16 @@ Full list of papers and metrics can be found in the excel file shared in the rep
 [Link to Github repo](https://github.com/jpkos/surg-meta)
 
 *Last update: 14.6.2022.*
+
+## Submit results
+
+If you know some good studies to be included, feel free to forward them to
+
+jani.koskinen [ at ] uef.fi
+
+or use the form below
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZQOqK2r6j1hXMFhraIdsLXZebgS8va0-Vbv7-v5_eSoiBSg/viewform?embedded=true" width="640" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 
 ## How results are calculated
