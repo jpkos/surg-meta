@@ -1,0 +1,41 @@
+# Tool Path Length
+How much the tools travel during the task.
+
+## Results
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(meta)
+library(esc)
+library(tidyverse)
+library(stargazer)
+library(readxl)
+```
+Load data
+```{r}
+df.toolpl <- read_excel('data/surgical_metrics.xlsx', sheet='tool_path_length')
+```
+
+Run meta-analysis
+```{r}
+m.toolpl <- metagen(TE=g,
+                 seTE=SDg,
+                 studlab=Author,
+                 data=df.toolpl,
+                 sm="SMD",
+                 fixed=FALSE,
+                 random=TRUE,
+                 method.tau="REML",
+                 hakn=TRUE,
+                 title="Tool path length in Surgery")
+```
+```{r}
+summary(m.toolpl)
+```
+
+Plot forest
+```{r, fig.width = 10, fig.height=5}
+forest.meta(m.toolpl,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool path length in Surgery")
+dev.print(pdf, "figures/forest_toolpl.pdf", width=8, height=8)
+```
+
+## Discussion
+Tool path length also a very common metric. Most studies report that novices have much larger path length, indicating less effective movements. Results differ based on task and surgical
