@@ -55,5 +55,6 @@ Full list of papers and metrics can be found in the excel file shared in the rep
 
 These values are used as input in the R *meta* package's metagen function.
 
+## Forest plots
 
-
+![Forest plot explanation](figures/forest-explanation.png)
