@@ -32,7 +32,10 @@ output:
 ```{r child = "meta-pupil.Rmd"}
 
 ```
+<<<<<<< HEAD
 
 ```{r child = "meta-tool-mvt.Rmd"}
 
 ```
+=======
+>>>>>>> dd509e4028ecd285003ec155ed20283a49654a0e
