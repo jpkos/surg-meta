@@ -38,13 +38,11 @@ Plot forest
 ```{r, fig.width = 10, fig.height=5}
 forest.meta(m.time,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Time to completion in Surgery")
 dev.print(pdf, "figures/forest_time.pdf", width=8, height=8)
-<<<<<<< HEAD
-=======
+
 ```
 Plot drapery
 ```{r, fig.width = 10,fig.height=10}
 drapery(m.time, labels="studlab", type="pval", legend=FALSE)
->>>>>>> 277b935df9accd3b38423a3d65de13e46b398985
 ```
 
 

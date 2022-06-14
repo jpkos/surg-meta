@@ -1,10 +1,6 @@
 ---
 title: "How do we measure surgical skill"
-<<<<<<< HEAD
 subtitle: "An informal meta-analysis"
-=======
-subtitle: "A meta-analysis"
->>>>>>> 277b935df9accd3b38423a3d65de13e46b398985
 author: "Jani Koskinen"
 output:
   html_document:
@@ -32,10 +28,7 @@ output:
 ```{r child = "meta-biman.Rmd"}
 
 ```
-<<<<<<< HEAD
 
 ```{r child = "meta-pupil.Rmd"}
 
 ```
-=======
->>>>>>> 277b935df9accd3b38423a3d65de13e46b398985
