@@ -11,6 +11,8 @@ Novice = weakest skill group in the study, expert = strongest skill group in the
 If a study included more than 2 groups, I picked the weakest (=novice) and strongest (=expert)
 groups' results and discarded the others. If a study included more than 1 task, or several sub-tasks, I picked the one with largest difference between groups.
 
+**Many papers also did report means and standard deviations explicitly, so they had to be estimated from boxplots/barplots**
+
 May or may not be turned into more systematic meta-analysis later.
 
 Metrics that will be most likely included (Bolded ones have priority)
@@ -28,6 +30,7 @@ Metrics that will be most likely included (Bolded ones have priority)
 - Tool Forces
 - Tool Torques
 - **Bimanual dexterity**
+- **Jerk**
 
 Full list of papers and metrics can be found in the excel file shared in the repo:
 
@@ -53,11 +56,15 @@ or use the form below
   + Means per group (Mn, Me for novices and experts, respectively)
   + Standard deviations per group (SDn, SDe)
 2. Calculate pooled standard deviation SDpooled
-3. Normalize by calculating Standardized Mean Difference (SDM): |Mn - Me|/SDpooled
+3. Normalize by calculating Standardized Mean Difference (SDM): (Mn - Me)/SDpooled
 4. Calculate small sample size correction g (link that shows calculation)
 5. Calculate SDg, standard deviation after correction
 
 These values are used as input in the R *meta* package's metagen function.
+
+For more information, check:
+
+[Doing Meta-Analysis with R: A Hands-On Guide](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/)
 
 ## Forest plots
 

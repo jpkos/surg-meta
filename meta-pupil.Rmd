@@ -1,8 +1,8 @@
-# Task-evoked pupil dilation
+# **Task-evoked pupil dilation**
 
 Pupil size measures cognitive workload, stress, and million other things.
 
-## Results
+## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
 library(esc)
@@ -14,6 +14,11 @@ Load data
 ```{r}
 df.pupil <- read_excel('data/surgical_metrics.xlsx', sheet='pupil_dilation')
 ```
+Print studies
+```{r echo = FALSE, results = 'asis'}
+kable(df.pupil[,c("Author", "Year", "Study", "Journal")])
+```
+## Results
 Run meta-analysis
 ```{r}
 m.pupil <- metagen(TE=g,

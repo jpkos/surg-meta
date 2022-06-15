@@ -1,9 +1,9 @@
 
-# Grasps
+# **Grasps**
 
 Grasps are the number of times the surgeon had to grasp something using surgical instruments
 
-## Results
+## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
 library(esc)
@@ -15,7 +15,11 @@ Load data
 ```{r}
 df.grasp <- read_excel('data/surgical_metrics.xlsx', sheet='tool_grasps')
 ```
-
+Print studies
+```{r echo = FALSE, results = 'asis'}
+kable(df.grasp[,c("Author", "Year", "Study", "Journal")])
+```
+## Results
 Run meta-analysis
 ```{r}
 m.grasp <- metagen(TE=g,

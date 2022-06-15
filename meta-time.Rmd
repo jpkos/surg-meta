@@ -1,23 +1,28 @@
 
 
-# Task time
+# **Task time**
 
 Task time is the time taken to complete a task. Task can be short like a single knot or some longer complex task.
 
-## Results
+## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
 library(esc)
 library(tidyverse)
 library(stargazer)
 library(readxl)
+library(knitr)
 ```
 Load data
 ```{r}
 df.time <- read_excel('data/surgical_metrics.xlsx', sheet='task_time')
 ```
+Print studies
+```{r echo = FALSE, results = 'asis'}
+kable(df.time[,c("Author", "Year", "Study", "Journal")])
+```
 
-
+## Results
 ```{r}
 m.time <- metagen(TE=g,
                  seTE=SDg,

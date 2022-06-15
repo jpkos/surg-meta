@@ -1,9 +1,9 @@
 
-# Tool movements
+# **Tool movements**
 
 Number of tool movements made during the task. Note: I have included here the grasp results from our paper (and other studies that analyzed only one type of action/movement)
 
-## Results
+## Studies
 
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
@@ -16,6 +16,11 @@ Load data
 ```{r}
 df.toolmvt <- read_excel('data/surgical_metrics.xlsx', sheet='tool_movements')
 ```
+Print studies
+```{r echo = FALSE, results = 'asis'}
+kable(df.toolmvt[,c("Author", "Year", "Study", "Journal")])
+```
+## Results
 Run meta-analysis
 ```{r}
 m.toolmvt <- metagen(TE=g,

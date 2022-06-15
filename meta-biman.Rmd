@@ -1,8 +1,8 @@
-# Bimanual dexterity
+# **Bimanual dexterity**
 
 Bimanual dexterity is a measure of how well the surgeon is able to use both hands at the same time. Note that there are many different ways for calculating "ability to use both hands simultaneously."
 
-## Results
+## Studies
 
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
@@ -15,6 +15,12 @@ Load data
 ```{r}
 df.biman <- read_excel('data/surgical_metrics.xlsx', sheet='tool_bimanual')
 ```
+Print studies
+```{r echo = FALSE, results = 'asis'}
+kable(df.biman[,c("Author", "Year", "Study", "Journal")])
+```
+## Results
+Run meta-analysis
 ```{r}
 m.biman <- metagen(TE=g,
                  seTE=SDg,
@@ -27,6 +33,7 @@ m.biman <- metagen(TE=g,
                  hakn=TRUE,
                  title="Bimanual dexterity in Surgery")
 ```
+Print results
 ```{r}
 summary(m.biman)
 ```

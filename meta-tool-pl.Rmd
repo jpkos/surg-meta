@@ -1,7 +1,7 @@
-# Tool Path Length
+# **Tool Path Length**
 How much the tools travel during the task.
 
-## Results
+## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
 library(esc)
@@ -13,7 +13,12 @@ Load data
 ```{r}
 df.toolpl <- read_excel('data/surgical_metrics.xlsx', sheet='tool_path_length')
 ```
+Print studies
+```{r echo = FALSE, results = 'asis'}
+kable(df.pupil[,c("Author", "Year", "Study", "Journal")])
+```
 
+## Results
 Run meta-analysis
 ```{r}
 m.toolpl <- metagen(TE=g,
