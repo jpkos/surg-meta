@@ -1,0 +1,47 @@
+
+# **Jerk**
+
+Jerk is the third derivative of the surgical instruments position, and measures how smooth the movements are.
+
+## Studies
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(meta)
+library(esc)
+library(tidyverse)
+library(stargazer)
+library(readxl)
+```
+Load data
+```{r}
+df.jerk <- read_excel('data/surgical_metrics.xlsx', sheet='tool_jerk')
+```
+Print studies
+```{r echo = FALSE, results = 'asis'}
+kable(df.jerk[,c("Author", "Year", "Study", "Journal")])
+```
+## Results
+Run meta-analysis
+```{r}
+m.jerk <- metagen(TE=g,
+                 seTE=SDg,
+                 studlab=Author,
+                 data=df.jerk,
+                 sm="SMD",
+                 fixed=FALSE,
+                 random=TRUE,
+                 method.tau="REML",
+                 hakn=TRUE,
+                 title="Jerk in Surgery")
+```
+```{r}
+summary(m.jerk)
+```
+
+Plot forest
+```{r, fig.width = 10, fig.height=5}
+forest.meta(m.jerk,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Jerk in Surgery")
+dev.print(pdf, "figures/forest_tooljerk.pdf", width=8, height=8)
+```
+
+## Discussion
+TBD
