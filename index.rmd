@@ -21,10 +21,6 @@ output:
 
 ```
 
-```{r child = "meta-grasp.Rmd"}
-
-```
-
 ```{r child = "meta-biman.Rmd"}
 
 ```
@@ -43,5 +39,13 @@ output:
 ```
 
 ```{r child = "meta-jerk.Rmd"}
+
+```
+
+```{r child = "meta-tool-idle.Rmd"}
+
+```
+
+```{r child = "meta-grasp.Rmd"}
 
 ```

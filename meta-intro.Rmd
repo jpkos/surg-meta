@@ -11,7 +11,9 @@ Novice = weakest skill group in the study, expert = strongest skill group in the
 If a study included more than 2 groups, I picked the weakest (=novice) and strongest (=expert)
 groups' results and discarded the others. If a study included more than 1 task, or several sub-tasks, I picked the one with largest difference between groups.
 
-**Many papers also did report means and standard deviations explicitly, so they had to be estimated from boxplots/barplots**
+**Many papers did report means and standard deviations explicitly, so they had to be estimated from boxplots/barplots, or by some other means**
+
+For example, sometimes studies reported only mean or median, but no SE/SD. I estimated the SD/SE in those cases based e.g. on the SD of some other similar metric that they reported, or the SD of previous results for the same metric. **See the excel file for notes on each study.**
 
 May or may not be turned into more systematic meta-analysis later.
 
