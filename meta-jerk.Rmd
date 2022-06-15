@@ -1,5 +1,5 @@
 
-# **Jerk**
+# **Tool Jerk**
 
 Jerk is the third derivative of the surgical instruments position, and measures how smooth the movements are.
 
