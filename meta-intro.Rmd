@@ -15,10 +15,10 @@ groups' results and discarded the others. If a study included more than 1 task, 
 
 May or may not be turned into more systematic meta-analysis later.
 
-Metrics that will be most likely included (Bolded ones have priority)
+Example metrics that will be most likely included (Bolded ones have priority)
 
 - **Task time**
-- Tool Path length
+- **Tool Path length**
 - Tool Velocity
 - Tool Acceleration
 - Tool Curvature
@@ -31,6 +31,9 @@ Metrics that will be most likely included (Bolded ones have priority)
 - Tool Torques
 - **Bimanual dexterity**
 - **Jerk**
+- Fixation duration
+- Saccade amplitudes
+- EEG?
 
 Full list of papers and metrics can be found in the excel file shared in the repo:
 
