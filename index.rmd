@@ -1,6 +1,6 @@
 ---
 title: "How do we measure surgical skill"
-subtitle: "An informal meta-analysis"
+subtitle: "*An informal meta-analysis*"
 author: "Jani Koskinen"
 output:
   html_document:
@@ -42,4 +42,6 @@ output:
 
 ```
 
+```{r child = "meta-jerk.Rmd"}
 
+```
