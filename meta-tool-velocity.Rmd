@@ -1,0 +1,47 @@
+
+# **Tool velocity**
+
+Tool velocity/speed measures how fast the surgical tool or tools are moving.
+
+## Studies
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(meta)
+library(esc)
+library(tidyverse)
+library(stargazer)
+library(readxl)
+```
+Load data
+```{r}
+df.toolvelocity <- read_excel('data/surgical_metrics.xlsx', sheet='tool_velocity')
+```
+Print studies
+```{r echo = FALSE, results = 'asis'}
+kable(df.toolvelocity[,c("Author", "Year", "Study", "Journal")])
+```
+## Results
+Run meta-analysis
+```{r}
+m.toolvelocity <- metagen(TE=g,
+                 seTE=SDg,
+                 studlab=Author,
+                 data=df.toolvelocity,
+                 sm="SMD",
+                 fixed=FALSE,
+                 random=TRUE,
+                 method.tau="REML",
+                 hakn=TRUE,
+                 title="Tool velocity in Surgery")
+```
+```{r}
+summary(m.toolvelocity)
+```
+
+Plot forest
+```{r, fig.width = 10, fig.height=5}
+forest.meta(m.toolvelocity,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool velocity in Surgery")
+dev.print(pdf, "figures/forest_toolvelocity.pdf", width=8, height=8)
+```
+
+## Discussion
+Velocity (and related metrics like acceleration) are semi-popular method. Results seem to vary a lot, sometimes novices are faster and sometimes experts are faster. May depend on task?
