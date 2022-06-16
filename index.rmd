@@ -46,6 +46,10 @@ output:
 
 ```
 
+```{r child = "meta-tool-velocity.Rmd"}
+
+```
+
 ```{r child = "meta-grasp.Rmd"}
 
 ```

@@ -45,13 +45,13 @@ Full list of papers and metrics can be found in the excel file shared in the rep
 
 ## Submit results
 
-If you know some good studies to be included, feel free to forward them to
+If you notice errors or know some good studies to be included, feel free to forward them to
 
 jani.koskinen [ at ] uef.fi
 
-or use the form below
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZQOqK2r6j1hXMFhraIdsLXZebgS8va0-Vbv7-v5_eSoiBSg/viewform?embedded=true" width="640" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+or use the form below TBD
+<!--
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdZQOqK2r6j1hXMFhraIdsLXZebgS8va0-Vbv7-v5_eSoiBSg/viewform?embedded=true" width="640" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
 
 
 ## How results are calculated
@@ -62,7 +62,7 @@ or use the form below
   + Standard deviations per group (SDn, SDe)
 2. Calculate pooled standard deviation SDpooled
 3. Normalize by calculating Standardized Mean Difference (SDM): (Mn - Me)/SDpooled
-4. Calculate small sample size correction g (link that shows calculation)
+4. Calculate small sample size correction g = SMD*(1 - 3/(4n - 9)), where n is the total sample size of the study (both groups combined).
 5. Calculate SDg, standard deviation after correction
 
 These values are used as input in the R *meta* package's metagen function.
