@@ -1,10 +1,14 @@
 
 # **Introduction**
 
+## What is this
+
 This notebook will include informal meta-analyses of different metrics and methods
 for evaluating surgical skill.
 
-**The reported metrics compare differences between novices and expert surgeons.**
+
+>**The reported metrics compare differences between novices and expert surgeons.**
+
 
 It is informal because it's not based on systematic review,
 and because some studies have been included with very relaxed conditions. For example,
