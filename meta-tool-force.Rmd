@@ -1,0 +1,47 @@
+
+# **Tool Force**
+
+Tool force is the force the surgeon uses when they e.g. grasp something using the surgical tools.
+
+## Studies
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(meta)
+library(esc)
+library(tidyverse)
+library(stargazer)
+library(readxl)
+```
+Load data
+```{r}
+df.force <- read_excel('data/surgical_metrics.xlsx', sheet='tool_force')
+```
+Print studies
+```{r echo = FALSE, results = 'asis'}
+kable(df.force[,c("Author", "Year", "Study", "Journal")])
+```
+## Results
+Run meta-analysis
+```{r}
+m.force <- metagen(TE=g,
+                 seTE=SDg,
+                 studlab=Author,
+                 data=df.force,
+                 sm="SMD",
+                 fixed=FALSE,
+                 random=TRUE,
+                 method.tau="REML",
+                 hakn=TRUE,
+                 title="Force use in Surgery")
+```
+```{r}
+summary(m.force)
+```
+
+Plot forest
+```{r, fig.width = 10, fig.height=5}
+forest.meta(m.force,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Force use in Surgery")
+dev.print(pdf, "figures/forest_toolforce.pdf", width=8, height=8)
+```
+
+## Discussion
+Forces analyzed somewhat commonly, but often not between novices and experts, but within tasks, or tools, or skill groups.
