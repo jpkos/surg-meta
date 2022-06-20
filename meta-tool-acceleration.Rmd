@@ -10,6 +10,7 @@ library(esc)
 library(tidyverse)
 library(stargazer)
 library(readxl)
+library(knitr)
 ```
 Load data
 ```{r}

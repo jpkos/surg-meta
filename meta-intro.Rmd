@@ -129,7 +129,8 @@ p <- ggplot(data=df.sample, aes(x=effect_size, y=sample_size)) + geom_point() + 
   geom_vline(xintercept=3.3, color='red') + annotate("text", x=3.4, y=150, label="BD", color='red') +
   geom_vline(xintercept=0.6, color='red') + annotate("text", x=0.7, y=150, label="TEPR", color='red') + 
   geom_vline(xintercept=0.7, color='red') + annotate("text", x=0.8, y=170, label="TJ", color='red') +
-  geom_vline(xintercept=1.6, color='red') + annotate("text", x=1.7, y=170, label="TF", color='red') 
+  geom_vline(xintercept=1.6, color='red') + annotate("text", x=1.7, y=170, label="TF", color='red') +
+  geom_vline(xintercept=2.6, color='red') + annotate("text", x=2.7, y=170, label="OSATS", color='red') 
 
 ggplotly(p)
 ```
