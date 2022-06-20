@@ -94,16 +94,28 @@ library(plotly)
 How many samples needed at some effect size d? At alpha = 0.05 and power = 0.8 and using t-test. Assuming independent trials (e.g. no multiple measurements from same participants etc.)
 
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
-i <- 1
+#TBD: teach yourself how to do this more easier in R
+j <- 1
 ds <- seq(0.3,4,0.01)
 ns <- list()
-for (d in ds){
-  poweranalysis <- pwr.t.test(d=d, sig.level=0.05, power=0.8)
-  ns[i] <- poweranalysis$n
-  i <- i + 1
+ns_full <- list()
+pss <- c(0.6, 0.7, 0.8, 0.9)
+pslist <- list()
+for (ps in pss){
+  i <- 1
+  ns <- list()
+  for (d in ds){
+    poweranalysis <- pwr.t.test(d=d, sig.level=0.05, power=ps)
+    ns[i] <- poweranalysis$n
+    i <- i + 1
+  }
+  ns_full <- cbind(ns_full, ns)
+  pslist <- cbind(pslist, rep(ps, length(ns)))
+  j <- j + 1
 }
-df.sample <- data.frame(cbind(as.numeric(ns), as.numeric(ds)))
-colnames(df.sample) <- c("sample_size", "effect_size")
+df.sample <- data.frame(cbind(as.numeric(ns_full), as.numeric(ds)), as.numeric(pslist))
+colnames(df.sample) <- c("sample_size", "effect_size", "power")
+
 ```
 
 Hover mouse over the points in the plot to see the values. **Sample size is for group, so you need this many samples per group**
@@ -123,7 +135,7 @@ TJ = Tool Jerk
 TF = Tool Force
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
-p <- ggplot(data=df.sample, aes(x=effect_size, y=sample_size)) + geom_point() + scale_y_continuous(breaks = scales::pretty_breaks(n = 20)) + scale_x_continuous(breaks = scales::pretty_breaks(n = 20)) + labs(x="Effect size d", y="Sample size n") + 
+p <- ggplot(data=df.sample, aes(x=effect_size, y=sample_size, color=as.factor(power))) + geom_line() + scale_y_continuous(breaks = scales::pretty_breaks(n = 20)) + scale_x_continuous(breaks = scales::pretty_breaks(n = 20)) + labs(x="Effect size d", y="Sample size n", color="Power") + 
   geom_vline(xintercept=2.5, color='red') + annotate("text", x=2.6, y=150, label="TT", color='red') +
   geom_vline(xintercept=1.4, color='red') + annotate("text", x=1.5, y=150, label="IT", color='red') + 
   geom_vline(xintercept=3.3, color='red') + annotate("text", x=3.4, y=150, label="BD", color='red') +
