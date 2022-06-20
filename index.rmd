@@ -25,12 +25,13 @@ output:
 
 ```
 
-```{r child = "meta-pupil.Rmd"}
+
+```{r child = "meta-tool-mvt.Rmd"}
 
 ```
 
 
-```{r child = "meta-tool-mvt.Rmd"}
+```{r child = "meta-tool-idle.Rmd"}
 
 ```
 
@@ -38,15 +39,16 @@ output:
 
 ```
 
-```{r child = "meta-jerk.Rmd"}
-
-```
-
-```{r child = "meta-tool-idle.Rmd"}
-
-```
 
 ```{r child = "meta-tool-velocity.Rmd"}
+
+```
+
+```{r child = "meta-tool-acceleration.Rmd"}
+
+```
+
+```{r child = "meta-jerk.Rmd"}
 
 ```
 
@@ -54,6 +56,12 @@ output:
 
 ```
 
+```{r child = "meta-pupil.Rmd"}
+
+```
+
 ```{r child = "meta-grasp.Rmd"}
 
 ```
+
+

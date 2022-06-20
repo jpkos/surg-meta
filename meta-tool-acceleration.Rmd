@@ -1,0 +1,47 @@
+
+# **Tool Acceleration**
+
+Tool acceleration measures how much the tool/tools accelerate during the task.
+
+## Studies
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(meta)
+library(esc)
+library(tidyverse)
+library(stargazer)
+library(readxl)
+```
+Load data
+```{r}
+df.toolacc <- read_excel('data/surgical_metrics.xlsx', sheet='tool_acceleration')
+```
+Print studies
+```{r echo = FALSE, results = 'asis'}
+kable(df.toolacc[,c("Author", "Year", "Study", "Journal")])
+```
+## Results
+Run meta-analysis
+```{r}
+m.toolacc <- metagen(TE=g,
+                 seTE=SDg,
+                 studlab=Author,
+                 data=df.toolacc,
+                 sm="SMD",
+                 fixed=FALSE,
+                 random=TRUE,
+                 method.tau="REML",
+                 hakn=TRUE,
+                 title="Tool acceleration in Surgery")
+```
+```{r}
+summary(m.toolacc)
+```
+
+Plot forest
+```{r, fig.width = 10, fig.height=5}
+forest.meta(m.toolacc,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool acceleration in Surgery")
+dev.print(pdf, "figures/forest_toolacceleration.pdf", width=8, height=8)
+```
+
+## Discussion
+Not many papers that focused on tool accelerations. Jerk (third derivative of position, derivative of acceleration) is much more popular.
