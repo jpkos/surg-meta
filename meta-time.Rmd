@@ -1,6 +1,6 @@
 
 
-# **Task time**
+# **Task Time**
 
 Task time is the time taken to complete a task. Task can be short like a single knot or some longer complex task.
 

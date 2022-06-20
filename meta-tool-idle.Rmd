@@ -1,4 +1,4 @@
-# **Tool idle time**
+# **Tool Idle Time**
 
 Tool idle time measures how long the tools were not being used, either as time or as fraction of the complete task time.
 

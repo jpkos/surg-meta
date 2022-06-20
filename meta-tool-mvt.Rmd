@@ -1,5 +1,5 @@
 
-# **Tool movements**
+# **Tool Movements**
 
 Number of tool movements made during the task. Note: I have included here the grasp results from our paper (and other studies that analyzed only one type of action/movement)
 

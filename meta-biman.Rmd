@@ -1,4 +1,4 @@
-# **Bimanual dexterity**
+# **Bimanual Dexterity**
 
 Bimanual dexterity is a measure of how well the surgeon is able to use both hands at the same time. Note that there are many different ways for calculating "ability to use both hands simultaneously."
 

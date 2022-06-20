@@ -1,4 +1,4 @@
-# **Task-evoked pupil dilation**
+# **Task-Evoked Pupil Dilation**
 
 Pupil size measures cognitive workload, stress, and million other things.
 

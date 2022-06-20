@@ -1,5 +1,5 @@
 
-# **Grasps**
+# **TOol Grasps**
 
 Grasps are the number of times the surgeon had to grasp something using surgical instruments
 

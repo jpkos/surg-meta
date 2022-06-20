@@ -1,5 +1,5 @@
 
-# **Tool velocity**
+# **Tool Velocity**
 
 Tool velocity/speed measures how fast the surgical tool or tools are moving.
 
