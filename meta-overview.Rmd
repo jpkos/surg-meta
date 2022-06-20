@@ -1,0 +1,12 @@
+# **Overview**
+
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(esc)
+library(tidyverse)
+library(pwr)
+```
+
+```{r}
+power.n <- pwr.t.test(d=2, sig.level=0.05, power=0.8)
+```
+

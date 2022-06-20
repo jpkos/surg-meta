@@ -45,7 +45,7 @@ Example metrics that will be most likely included (Bolded ones have priority)
 
 Full list of papers and metrics can be found in the excel file shared in the repo:
 
-[Link to Github repo](https://github.com/jpkos/surg-meta)
+[Link to Github repo](https://github.com/jpkos/surg-mveta)
 
 *Last update: 20.6.2022.*
 
@@ -80,5 +80,47 @@ For more information, check:
 ## Forest plots
 
 ![Forest plot explanation](figures/forest-explanation.png)
+
+## Sample size estimation
+
+
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(pwr)
+library(ggplot2)
+library(plotly)
+```
+
+How many samples needed at some effect size d? At alpha = 0.05 and power = 0.8 and using t-test. Assuming independent trials (e.g. no multiple measurements from same participants etc.)
+
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+i <- 1
+ds <- seq(0.3,4,0.05)
+ns <- list()
+for (d in ds){
+  poweranalysis <- pwr.t.test(d=d, sig.level=0.05, power=0.8)
+  ns[i] <- poweranalysis$n
+  i <- i + 1
+}
+df.sample <- data.frame(cbind(as.numeric(ns), as.numeric(ds)))
+colnames(df.sample) <- c("sample_size", "effect_size")
+```
+
+Hover mouse over the points in the plot to see the values. Some baseline effect sizes from the meta-analyses given as baseline:
+
+IT = Idle Time
+TT = Task Time
+BD = Bimanual Dexterity
+TEPR = Task-Evoked Pupil Reaction/Dilation (Esimated without one outlier study removed)
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+p <- ggplot(data=df.sample, aes(x=effect_size, y=sample_size)) + geom_point() + scale_y_continuous(breaks = scales::pretty_breaks(n = 20)) + scale_x_continuous(breaks = scales::pretty_breaks(n = 20)) + 
+  geom_vline(xintercept=2.5, color='red') + annotate("text", x=2.6, y=150, label="TT", color='red') +
+  geom_vline(xintercept=1.4, color='red') + annotate("text", x=1.5, y=150, label="IT", color='red') + 
+  geom_vline(xintercept=3.3, color='red') + annotate("text", x=3.4, y=150, label="BD", color='red') +
+  geom_vline(xintercept=0.7, color='red') + annotate("text", x=0.8, y=150, label="TEPR", color='red')
+
+ggplotly(p)
+```
+
 
 
