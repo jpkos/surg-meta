@@ -40,7 +40,7 @@ summary(m.jerk)
 Plot forest
 ```{r, fig.width = 10, fig.height=5}
 forest.meta(m.jerk,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Jerk in Surgery")
-dev.print(pdf, "figures/forest_tooljerk.pdf", width=8, height=8)
+#dev.print(pdf, "figures/forest_tooljerk.pdf", width=8, height=8)
 ```
 
 ## Discussion

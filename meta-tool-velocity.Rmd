@@ -1,5 +1,5 @@
 
-# **Tool velocity**
+# **Tool Velocity**
 
 Tool velocity/speed measures how fast the surgical tool or tools are moving.
 
@@ -40,7 +40,7 @@ summary(m.toolvelocity)
 Plot forest
 ```{r, fig.width = 10, fig.height=5}
 forest.meta(m.toolvelocity,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool velocity in Surgery")
-dev.print(pdf, "figures/forest_toolvelocity.pdf", width=8, height=8)
+#dev.print(pdf, "figures/forest_toolvelocity.pdf", width=8, height=8)
 ```
 
 ## Discussion

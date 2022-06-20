@@ -1,6 +1,6 @@
 
 
-# **Task time**
+# **Task Time**
 
 Task time is the time taken to complete a task. Task can be short like a single knot or some longer complex task.
 
@@ -41,7 +41,7 @@ summary(m.time)
 Plot forest
 ```{r, fig.width = 10, fig.height=7}
 forest.meta(m.time,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Time to completion in Surgery")
-dev.print(pdf, "figures/forest_time.pdf", width=10, height=10)
+#dev.print(pdf, "figures/forest_time.pdf", width=10, height=10)
 
 
 ```

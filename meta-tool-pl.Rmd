@@ -39,7 +39,7 @@ summary(m.toolpl)
 Plot forest
 ```{r, fig.width = 10, fig.height=5}
 forest.meta(m.toolpl,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool path length in Surgery")
-dev.print(pdf, "figures/forest_toolpl.pdf", width=8, height=8)
+#dev.print(pdf, "figures/forest_toolpl.pdf", width=8, height=8)
 ```
 
 ## Discussion

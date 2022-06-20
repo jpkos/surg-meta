@@ -40,7 +40,7 @@ summary(m.force)
 Plot forest
 ```{r, fig.width = 10, fig.height=5}
 forest.meta(m.force,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Force use in Surgery")
-dev.print(pdf, "figures/forest_toolforce.pdf", width=8, height=8)
+#dev.print(pdf, "figures/forest_toolforce.pdf", width=8, height=8)
 ```
 
 ## Discussion

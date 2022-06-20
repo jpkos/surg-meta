@@ -1,4 +1,4 @@
-# **Bimanual dexterity**
+# **Bimanual Dexterity**
 
 Bimanual dexterity is a measure of how well the surgeon is able to use both hands at the same time. Note that there are many different ways for calculating "ability to use both hands simultaneously."
 
@@ -40,7 +40,7 @@ summary(m.biman)
 Plot forest
 ```{r, fig.width = 10, fig.height=5}
 forest.meta(m.biman,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Bimanual dexterity in Surgery")
-dev.print(pdf, "figures/forest_biman.pdf", width=8, height=8)
+#dev.print(pdf, "figures/forest_biman.pdf", width=8, height=8)
 ```
 
 ## Discussion

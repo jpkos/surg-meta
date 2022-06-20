@@ -40,7 +40,7 @@ summary(m.toolacc)
 Plot forest
 ```{r, fig.width = 10, fig.height=5}
 forest.meta(m.toolacc,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool acceleration in Surgery")
-dev.print(pdf, "figures/forest_toolacceleration.pdf", width=8, height=8)
+#dev.print(pdf, "figures/forest_toolacceleration.pdf", width=8, height=8)
 ```
 
 ## Discussion

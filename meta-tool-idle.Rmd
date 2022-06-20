@@ -1,4 +1,4 @@
-# **Tool idle time**
+# **Tool Idle Time**
 
 Tool idle time measures how long the tools were not being used, either as time or as fraction of the complete task time.
 
@@ -39,7 +39,7 @@ summary(m.toolidle)
 Plot forest
 ```{r, fig.width = 10, fig.height=5}
 forest.meta(m.toolidle,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Idle time in Surgery")
-dev.print(pdf, "figures/forest_toolidle.pdf", width=8, height=8)
+#dev.print(pdf, "figures/forest_toolidle.pdf", width=8, height=8)
 ```
 
 ## Discussion

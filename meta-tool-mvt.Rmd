@@ -1,5 +1,5 @@
 
-# **Tool movements**
+# **Tool Movements**
 
 Number of tool movements made during the task. Note: I have included here the grasp results from our paper (and other studies that analyzed only one type of action/movement)
 
@@ -41,7 +41,7 @@ summary(m.toolmvt)
 Plot forest
 ```{r, fig.width = 10, fig.height=5}
 forest.meta(m.toolmvt,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool movements in Surgery")
-dev.print(pdf, "figures/forest_toolmvt.pdf", width=8, height=8)
+#dev.print(pdf, "figures/forest_toolmvt.pdf", width=8, height=8)
 ```
 
 ## Discussion
