@@ -95,7 +95,7 @@ How many samples needed at some effect size d? At alpha = 0.05 and power = 0.8 a
 
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 i <- 1
-ds <- seq(0.3,4,0.05)
+ds <- seq(0.3,4,0.01)
 ns <- list()
 for (d in ds){
   poweranalysis <- pwr.t.test(d=d, sig.level=0.05, power=0.8)
