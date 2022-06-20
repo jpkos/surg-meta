@@ -105,7 +105,9 @@ df.sample <- data.frame(cbind(as.numeric(ns), as.numeric(ds)))
 colnames(df.sample) <- c("sample_size", "effect_size")
 ```
 
-Hover mouse over the points in the plot to see the values. Some baseline effect sizes from the meta-analyses given as baseline:
+Hover mouse over the points in the plot to see the values. **Sample size is for group, so you need this many samples per group**
+
+Some baseline effect sizes from the meta-analyses given as baseline:
 
 IT = Idle Time
 
