@@ -1,0 +1,47 @@
+
+# **SEI: OSATS**
+
+OSATS is a evaluation instrument that consists of a grading scale and a checklist.
+
+## Studies
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(meta)
+library(esc)
+library(tidyverse)
+library(stargazer)
+library(readxl)
+```
+Load data
+```{r}
+df.osats <- read_excel('data/surgical_metrics.xlsx', sheet='scale_OSATS')
+```
+Print studies
+```{r echo = FALSE, results = 'asis'}
+kable(df.osats[,c("Author", "Year", "Study", "Journal")])
+```
+## Results
+Run meta-analysis
+```{r}
+m.osats <- metagen(TE=g,
+                 seTE=SDg,
+                 studlab=Author,
+                 data=df.osats,
+                 sm="SMD",
+                 fixed=FALSE,
+                 random=TRUE,
+                 method.tau="REML",
+                 hakn=TRUE,
+                 title="OSATS in Surgery")
+```
+```{r}
+summary(m.osats)
+```
+
+Plot forest
+```{r, fig.width = 10, fig.height=5}
+forest.meta(m.osats,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="OSATS in Surgery")
+#dev.print(pdf, "figures/forest_OSATS.pdf", width=8, height=8)
+```
+
+## Discussion
+Not many papers that focused on tool accelerations. Jerk (third derivative of position, derivative of acceleration) is much more popular.

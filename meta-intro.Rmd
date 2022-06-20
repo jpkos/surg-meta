@@ -42,6 +42,7 @@ Example metrics that will be most likely included (Bolded ones have priority)
 - Fixation duration
 - Saccade amplitudes
 - EEG?
+- **Surgical Evaluation Instruments (SEI)**
 
 Full list of papers and metrics can be found in the excel file shared in the repo:
 
