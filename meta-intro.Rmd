@@ -48,7 +48,7 @@ Full list of papers and metrics can be found in the excel file shared in the rep
 
 [Link to Github repo](https://github.com/jpkos/surg-mveta)
 
-*Last update: 20.6.2022.*
+*Last update: 22.6.2022.*
 
 ## Submit results
 

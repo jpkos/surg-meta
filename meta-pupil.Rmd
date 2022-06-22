@@ -16,7 +16,7 @@ df.pupil <- read_excel('data/surgical_metrics.xlsx', sheet='pupil_dilation')
 ```
 Print studies
 ```{r echo = FALSE, results = 'asis'}
-kable(df.pupil[,c("Author", "Year", "Study", "Journal")])
+kable(df.pupil[,c("Author", "Year", "Study", "Journal", "Note")])
 ```
 ## Results
 Run meta-analysis

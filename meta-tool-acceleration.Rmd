@@ -18,7 +18,7 @@ df.toolacc <- read_excel('data/surgical_metrics.xlsx', sheet='tool_acceleration'
 ```
 Print studies
 ```{r echo = FALSE, results = 'asis'}
-kable(df.toolacc[,c("Author", "Year", "Study", "Journal")])
+kable(df.toolacc[,c("Author", "Year", "Study", "Journal", "Note")])
 ```
 ## Results
 Run meta-analysis

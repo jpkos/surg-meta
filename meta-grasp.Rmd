@@ -18,7 +18,7 @@ df.grasp <- read_excel('data/surgical_metrics.xlsx', sheet='tool_grasps')
 ```
 Print studies
 ```{r echo = FALSE, results = 'asis'}
-kable(df.grasp[,c("Author", "Year", "Study", "Journal")])
+kable(df.grasp[,c("Author", "Year", "Study", "Journal", "Note")])
 ```
 ## Results
 Run meta-analysis

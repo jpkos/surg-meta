@@ -18,7 +18,7 @@ df.osats <- read_excel('data/surgical_metrics.xlsx', sheet='scale_OSATS')
 ```
 Print studies
 ```{r echo = FALSE, results = 'asis'}
-kable(df.osats[,c("Author", "Year", "Study", "Journal")])
+kable(df.osats[,c("Author", "Year", "Study", "Journal", "Note")])
 ```
 ## Results
 Run meta-analysis

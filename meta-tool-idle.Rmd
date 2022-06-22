@@ -16,7 +16,7 @@ df.toolidle <- read_excel('data/surgical_metrics.xlsx', sheet='tool_idle')
 ```
 Print studies
 ```{r echo = FALSE, results = 'asis'}
-kable(df.toolidle[,c("Author", "Year", "Study", "Journal")])
+kable(df.toolidle[,c("Author", "Year", "Study", "Journal", "Note")])
 ```
 ## Results
 Run meta-analysis

@@ -17,7 +17,7 @@ df.toolvelocity <- read_excel('data/surgical_metrics.xlsx', sheet='tool_velocity
 ```
 Print studies
 ```{r echo = FALSE, results = 'asis'}
-kable(df.toolvelocity[,c("Author", "Year", "Study", "Journal")])
+kable(df.toolvelocity[,c("Author", "Year", "Study", "Journal", "Note")])
 ```
 ## Results
 Run meta-analysis

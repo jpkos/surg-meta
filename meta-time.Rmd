@@ -20,7 +20,7 @@ df.time <- read_excel('data/surgical_metrics.xlsx', sheet='task_time')
 ```
 Print studies
 ```{r echo = FALSE, results = 'asis'}
-kable(df.time[,c("Author", "Year", "Study", "Journal")])
+kable(df.time[,c("Author", "Year", "Study", "Journal", "Note")])
 ```
 
 ## Results
@@ -50,7 +50,17 @@ forest.meta(m.time,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Time to co
 
 With enough results, we can do regression analysis to compare e.g. how the effect sizes differed between surgical techniques.
 
-Fit linear model with Technique as explanatory variable.
+First, plot by surgical technique (red labels show the number of studies):
+
+```{r}
+n_obs <- function(x){
+  return(c(y=0, label=length(x)))
+}
+ggplot(df.time, aes(x=Technique, y=SMD)) + geom_boxplot() + stat_summary(fun.data = n_obs, colour = "red", size = 5, geom = "text")
+```
+
+
+Fit linear model with Technique as explanatory variable. Microsurgery effect size is used as baseline (intercept).
 
 ```{r}
 df.time$Technique <- as.factor(df.time$Technique)

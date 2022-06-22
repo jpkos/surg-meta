@@ -18,7 +18,7 @@ df.toolmvt <- read_excel('data/surgical_metrics.xlsx', sheet='tool_movements')
 ```
 Print studies
 ```{r echo = FALSE, results = 'asis'}
-kable(df.toolmvt[,c("Author", "Year", "Study", "Journal")])
+kable(df.toolmvt[,c("Author", "Year", "Study", "Journal", "Note")])
 ```
 ## Results
 Run meta-analysis

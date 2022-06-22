@@ -15,7 +15,7 @@ df.toolpl <- read_excel('data/surgical_metrics.xlsx', sheet='tool_path_length')
 ```
 Print studies
 ```{r echo = FALSE, results = 'asis'}
-kable(df.toolpl[,c("Author", "Year", "Study", "Journal")])
+kable(df.toolpl[,c("Author", "Year", "Study", "Journal", "Note")])
 ```
 
 ## Results

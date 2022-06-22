@@ -17,7 +17,7 @@ df.jerk <- read_excel('data/surgical_metrics.xlsx', sheet='tool_jerk')
 ```
 Print studies
 ```{r echo = FALSE, results = 'asis'}
-kable(df.jerk[,c("Author", "Year", "Study", "Journal")])
+kable(df.jerk[,c("Author", "Year", "Study", "Journal", "Note")])
 ```
 ## Results
 Run meta-analysis

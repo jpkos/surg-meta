@@ -17,7 +17,7 @@ df.biman <- read_excel('data/surgical_metrics.xlsx', sheet='tool_bimanual')
 ```
 Print studies
 ```{r echo = FALSE, results = 'asis'}
-kable(df.biman[,c("Author", "Year", "Study", "Journal")])
+kable(df.biman[,c("Author", "Year", "Study", "Journal", "Note")])
 ```
 ## Results
 Run meta-analysis
