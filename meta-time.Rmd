@@ -12,6 +12,7 @@ library(tidyverse)
 library(stargazer)
 library(readxl)
 library(knitr)
+library(lme4)
 ```
 Load data
 ```{r}
@@ -45,6 +46,20 @@ forest.meta(m.time,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Time to co
 
 
 ```
+### Meta-regression (testing)
+
+With enough results, we can do regression analysis to compare e.g. how the effect sizes differed between surgical techniques.
+
+Fit linear model with Technique as explanatory variable.
+
+```{r}
+df.time$Technique <- as.factor(df.time$Technique)
+df.time <- within(df.time, Technique <- relevel(Technique, ref="Microsurgery"))
+lm.time <- lm(SMD ~ Technique, data=df.time)
+summary(lm.time)
+```
+
+
 ## Discussion
 
 Time to completion is by far the most often reported metric. It is often reported even when it is not the main focus of the study.
