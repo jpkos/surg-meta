@@ -12,6 +12,11 @@ output:
 
 ---
 
+<style>
+body {
+text-align: justify}
+</style>
+
 ```{r child = "meta-intro.Rmd"}
 
 ```

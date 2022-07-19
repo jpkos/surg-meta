@@ -145,7 +145,7 @@ ggplot(unique_studies, aes(x=Year)) + geom_bar() + scale_x_continuous("Year") + 
 </center>
 
 
-## Sample size estimation (Work in progress)
+## Sample size estimation (TBD)
 
 
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
