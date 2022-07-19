@@ -40,7 +40,7 @@ m.time <- metagen(TE=g,
 summary(m.time)
 ```
 Plot forest
-```{r, fig.width = 10, fig.height=7}
+```{r, fig.width = 10, fig.height=9}
 forest.meta(m.time,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Time to completion in Surgery")
 #dev.print(pdf, "figures/forest_time.pdf", width=10, height=10)
 
