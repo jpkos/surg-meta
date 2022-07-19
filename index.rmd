@@ -1,5 +1,5 @@
 ---
-title: "How do we measure surgical skill"
+title: "Charting Surgical Skill Evaluation Methods"
 subtitle: "*An informal meta-analysis*"
 author: "Jani Koskinen"
 output:
