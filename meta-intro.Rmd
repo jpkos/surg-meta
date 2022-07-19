@@ -117,16 +117,32 @@ for (sheet in sheets){
 nmetrics.df <- data.frame(cbind(ntechniques, nmetrics))
 colnames(nmetrics.df) <- c('Metric', 'Count')
 ```
+<center>
+<div style="background-color:rgba(63, 237, 40, 0.1);">
+
+> Number of results: **`r nrow(all_data)` **
+
+<hr style="border:2px solid gray">
+
 > Number of unique studies: **`r nrow(unique_studies)`**
+
+<hr style="border:2px solid gray">
 
 > Number of studies by surgical technique: `r kable(ntech)`
 
+<hr style="border:2px solid gray">
+
 > Number of studies by metric: `r kable(nmetrics.df)`
 
+<hr style="border:2px solid gray">
+
+> Number of studies by year:
+
+</div>
 ```{r, message=FALSE, echo=FALSE, warning=FALSE}
 ggplot(unique_studies, aes(x=Year)) + geom_bar() + scale_x_continuous("Year") + scale_y_continuous("Number of studies")
 ```
-
+</center>
 
 
 ## Sample size estimation (Work in progress)
