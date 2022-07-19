@@ -82,6 +82,52 @@ For more information, check:
 
 ![Forest plot explanation](figures/forest-explanation.png)
 
+## Summary of Included Studies
+
+Some general statistics of the studies included:
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(readxl)
+library(knitr)
+library(stargazer)
+library(ggplot2)
+```
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+data_path <- 'data/surgical_metrics.xlsx'
+sheets <- excel_sheets(data_path)
+all_data <- lapply(sheets, read_excel, path=data_path)
+all_data <- do.call(rbind, all_data)
+all_data <- all_data[,c('Author', 'Year', 'Study', 'Journal', 'Technique')]
+unique_studies <- all_data[!duplicated(all_data['Study']),]
+```
+
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+kb <- kable(table(unique_studies$Technique))
+nmetrics <- list()
+ntechniques <- list()
+i <- 1
+for (sheet in sheets){
+  nrx <- nrow(read_excel(data_path, sheet=sheet))
+  if (nrx<5) next
+  nmetrics[[i]] <- as.numeric(nrx)
+  ntechniques[[i]] <- sheet
+  i <- i + 1
+  #cat(sheet, ":", nrx, "\n")
+}
+nmetrics.df <- data.frame(cbind(ntechniques, nmetrics))
+colnames(nmetrics.df) <- c('Technique', 'Count')
+```
+> Number of unique studies: **`r nrow(unique_studies)`**
+
+> Number of studies by surgical technique: `r kb`
+
+> Number of studies by metric: `r kable(nmetrics.df)`
+
+```{r, message=FALSE, echo=FALSE, warning=FALSE}
+ggplot(unique_studies, aes(x=Year)) + geom_bar() + scale_x_continuous("Year") + scale_y_continuous("Number of studies")
+```
+
+
+
 ## Sample size estimation (Work in progress)
 
 
