@@ -101,7 +101,8 @@ unique_studies <- all_data[!duplicated(all_data['Study']),]
 ```
 
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
-kb <- kable(table(unique_studies$Technique))
+ntech <- as.data.frame(table(unique_studies$Technique))
+colnames(ntech) <- c('Technique', 'Count')
 nmetrics <- list()
 ntechniques <- list()
 i <- 1
@@ -114,11 +115,11 @@ for (sheet in sheets){
   #cat(sheet, ":", nrx, "\n")
 }
 nmetrics.df <- data.frame(cbind(ntechniques, nmetrics))
-colnames(nmetrics.df) <- c('Technique', 'Count')
+colnames(nmetrics.df) <- c('Metric', 'Count')
 ```
 > Number of unique studies: **`r nrow(unique_studies)`**
 
-> Number of studies by surgical technique: `r kb`
+> Number of studies by surgical technique: `r kable(ntech)`
 
 > Number of studies by metric: `r kable(nmetrics.df)`
 
