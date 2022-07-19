@@ -48,7 +48,7 @@ Full list of papers and metrics can be found in the excel file shared in the rep
 
 [Link to Github repo](https://github.com/jpkos/surg-mveta)
 
-*Last update: 19.7.2022.*: Added more results
+*Last update: 19.7.2022.*: Added more results. Changed Laparoscopy -> Endoscopy, so all endoscopic procedures are labeled 'endoscopy'
 
 ## Submit results
 
@@ -82,7 +82,7 @@ For more information, check:
 
 ![Forest plot explanation](figures/forest-explanation.png)
 
-## Sample size estimation
+## Sample size estimation (Work in progress)
 
 
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
