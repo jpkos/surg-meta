@@ -1,5 +1,5 @@
 
-# **SEI: OSATS**
+# **OSATS**
 
 OSATS is a evaluation instrument that consists of a grading scale and a checklist.
 
@@ -46,3 +46,5 @@ forest.meta(m.osats,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="OSATS in 
 
 ## Discussion
 Not many papers that focused on tool accelerations. Jerk (third derivative of position, derivative of acceleration) is much more popular.
+
+Results show that experts are consistently evaluated to have performed the tasks better than novices. All studies show significant differences between novices and experts.

@@ -2,6 +2,18 @@
 
 Bimanual dexterity is a measure of how well the surgeon is able to use both hands at the same time. Note that there are many different ways for calculating "ability to use both hands simultaneously."
 
+Some methods for calculating bimanual dexterity (BD):
+
+Fraction of time when both hands do simultaneously something $T_b$ and the total task time $T$
+$$
+BD = \frac{T_b}{T}
+$$
+Correlation between left- and right-hand velocities ($v_l$, $v_r$, respectively)
+$$
+BD = corr(v_l, v_r)
+$$
+
+
 ## Studies
 
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
@@ -10,6 +22,7 @@ library(esc)
 library(tidyverse)
 library(stargazer)
 library(readxl)
+library(knitr)
 ```
 Load data
 ```{r}
@@ -44,4 +57,9 @@ forest.meta(m.biman,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Bimanual 
 ```
 
 ## Discussion
+
 Analysis of bimanual dexterity is made harder because there are so many different definitions for it. 
+
+However, the results reviewed so far have consistently shown that experts have better bimanual dexterity, regardless of how it is measured. In other words, experts are better at using their hands/tools simultaneously for something productive.
+
+Islam et al. result is an outlier. The values were estimated from boxplot, it could be that there was a mistake **(TBD: check)**

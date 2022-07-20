@@ -1,7 +1,7 @@
 
 # **Tool Movements**
 
-Number of tool movements made during the task. Note: I have included here the grasp results from our paper (and other studies that analyzed only one type of action/movement)
+Number of tool movements made during the task. Note: This includes studies that reported all sub-movements and studies that focused on some sub-section of all movements. For example, Koskinen et al. studied only grasping with the surgical tool.
 
 ## Studies
 
@@ -46,3 +46,5 @@ forest.meta(m.toolmvt,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool mo
 
 ## Discussion
 Tool movements are perhaps the second most often reported metric. Different papers measure, analyze and report them differently. Often connected to "movement efficiency".
+
+This is also a consistent metric. With the exception of three studies, the studies showed that novices have significantly more movements than experts.

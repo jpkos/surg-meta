@@ -44,4 +44,4 @@ forest.meta(m.toolvelocity,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="To
 ```
 
 ## Discussion
-Velocity (and related metrics like acceleration) are semi-popular method. Results seem to vary a lot, sometimes novices are faster and sometimes experts are faster. May depend on task?
+Velocity and related metrics like acceleration are also semi-popular methods. Based on the reviewed studies, the results vary a lot. This indicates that while novices spend more time with the task (see task time results) and move the tools for longer paths (see tool path length results), the velocity of the movements do not differ from experts consistently. Or at least the results depend on surgical technique and task.

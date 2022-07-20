@@ -1,7 +1,7 @@
 
 # **Tool Force**
 
-Tool force is the force the surgeon uses when they e.g. grasp something using the surgical tools.
+Tool force is the force the surgeon uses when they e.g. grasp something using the surgical tools. Usually measured with force-sensors attached to the instruments. Perez-Escamirosa measured force with sensors attached to the pad where the task was completed.
 
 ## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
@@ -44,4 +44,6 @@ forest.meta(m.force,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Force use
 ```
 
 ## Discussion
-Forces analyzed somewhat commonly, but often not between novices and experts, but within tasks, or tools, or skill groups.
+Forces are analyzed somewhat commonly, but often not between novices and experts, but instead within tasks, or tools, or skill groups.
+
+Nonetheless, the results show that novices use larger forces when completing a task. The one exception is Prasad, whose study showed strong negative effect indicating that experts used larger forces. **TBD: investigate why**.

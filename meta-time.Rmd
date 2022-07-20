@@ -2,7 +2,9 @@
 
 # **Task Time**
 
-Task time is the time taken to complete a task. Task can be short like a single knot or some longer complex task.
+Task time is the time taken to complete a task. Task can be short like a single knot or some longer complex task. This metric is by far the most commonly reported result, as it is often reported even when the focus of the study is on some other metric. Typically measured in seconds or minutes.
+
+
 
 ## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
@@ -73,6 +75,8 @@ summary(lm.time)
 ## Discussion
 
 Time to completion is by far the most often reported metric. It is often reported even when it is not the main focus of the study.
+
+Task time is also the most consistent metric: In all the reviewed results, experts spent less time completing the task than novices.
 
 
 

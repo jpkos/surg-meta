@@ -1,6 +1,16 @@
 # **Task-Evoked Pupil Dilation**
 
-Pupil size measures cognitive workload, stress, and million other things.
+Increase in cognitive workload causes the pupil to dilate. Pupil dilations are also linked to differens in skill, probably indirectly through a correlation with skill and workload (less experienced subjects feel higher cognitive workload).
+
+There exist several different methods for processing pupil size data. Usually some kind of normalization is done, e.g.
+
+$$
+P_{norm} = \frac{P - P_{base}}{P_{base}}
+$$
+where $P$ is the pupil size, and $P_{base}$ is a baseline pupil size measured when the participant is not engaged with the task.
+
+Other methods include ICA (Index of Cognitive), whose calculation method is proprietary, and the "open-source" version IPA (Index of Pupillary Activity) by Duchowski et al. Both are based on wavelet decomposition analysis of the pupil signal.
+
 
 ## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}

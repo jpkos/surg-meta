@@ -3,6 +3,15 @@
 
 Jerk is the third derivative of the surgical instruments position, and measures how smooth the movements are.
 
+It is usually recommended to use the non-dimensional jerk, where the values have been normalized with a factor:
+$$
+J_{normalized} = \int_{t1}^{t2} (\frac{\delta^3x}{\delta t^3})^2 + (\frac{\delta^3y}{\delta t^3})^2 + (\frac{\delta^3z}{\delta t^3})^2 dt \times M
+$$
+where $M$ is the normalization factor:
+$$
+M = \frac{(t_2 - t_1)^5}{(\int_{t1}^{t2} \sqrt{(\frac{\delta^3x}{\delta t^3})^2 + (\frac{\delta^3y}{\delta t^3})^2 + (\frac{\delta^3z}{\delta t^3})^2} dt)^2}
+$$
+
 ## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
@@ -44,4 +53,4 @@ forest.meta(m.jerk,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Jerk in Su
 ```
 
 ## Discussion
-TBD
+Jerkiness of hand or tool movements is a semi-popular method that has also been used in other fields to evaluate performance. The results indicate that novices display higher jerk values, i.e. their movements are less smooth than those of experts. However, there are also a few studies that showed (non-significant) negative effects that would imply that the jerkiness is higher in experts. May depend on surgical technique and task.

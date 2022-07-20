@@ -45,4 +45,4 @@ forest.meta(m.toolacc,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool ac
 ```
 
 ## Discussion
-Not many papers that focused on tool accelerations. Jerk (third derivative of position, derivative of acceleration) is much more popular.
+Not many papers that focused on tool accelerations. The few results do not show a consistent pattern: sometimes novices have higher accelerations and sometimes experts have higher acceleration.

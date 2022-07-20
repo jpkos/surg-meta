@@ -43,4 +43,6 @@ forest.meta(m.toolpl,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Tool pat
 ```
 
 ## Discussion
-Tool path length also a very common metric. Most studies report that novices have much larger path length, indicating less effective movements. Results differ based on task and surgical
+Tool path length also a very common and consistent metric. Most studies report that novices have much larger path length, indicating less effective movements. Results differ based on task and surgical technique.
+
+Longer path lengths in novices also make sense in light of the task time results. Longer task time, more time to move the tools.

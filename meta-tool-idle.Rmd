@@ -2,6 +2,12 @@
 
 Tool idle time measures how long the tools were not being used, either as time or as fraction of the complete task time.
 
+Idle time (IT) can be measured in different ways, but the common theme is that we compare the time when tools are actively used ($T_a$) with the total task time $T$.
+
+$$
+IT = \frac{T_a}{T}
+$$
+
 ## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 library(meta)
@@ -43,4 +49,4 @@ forest.meta(m.toolidle,sortvar=g, prediction=TRUE, prin.tau2=TRUE, title="Idle t
 ```
 
 ## Discussion
-Not many papers that focused on idle time.
+Not many papers that focused on idle time. However, with one exception it seems to imply that novices have more idle time than experts. The one clear exception, Perez-Escamirosa et al., measured idle time by the time when tools were in contact with the training pad. This method may have missed a lot of instances that would have been counted as idle time in other studies.
