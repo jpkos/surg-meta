@@ -1,7 +1,7 @@
 # surg-meta
-Computational surgical skill metrics meta-analysis
 
-Collection and informal meta-review of methods for evaluatin surgical skills. See the associated website for more details:
+
+Collection and informal meta-review of methods for evaluating surgical skills. See the associated website for more details:
 
 https://jpkos.github.io/surg-meta/
 
