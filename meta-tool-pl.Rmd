@@ -1,5 +1,5 @@
 # **Tool Path Length**
-How much the tools travel during the task.
+Measures how much the tools travel during the task. Usually measured either with kinematic tracking or by detecting the instruments from videos.
 
 ## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}

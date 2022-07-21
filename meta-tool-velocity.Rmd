@@ -1,7 +1,7 @@
 
 # **Tool Velocity**
 
-Tool velocity/speed measures how fast the surgical tool or tools are moving.
+Tool velocity/speed measures how fast the surgical tool or tools are moving. Usually measured with electromagnetic tracking sensors, but can also be measured from video recordings by detecting the surgical instruments.
 
 ## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}

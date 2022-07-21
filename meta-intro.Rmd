@@ -48,7 +48,7 @@ Full list of papers and metrics can be found in the excel file shared in the rep
 
 [Link to Github repo](https://github.com/jpkos/surg-mveta)
 
-> *Last update: 20.7.2022.*: Expanded the description of metrics and their discussion sections.
+> *Last update: 21.7.2022.*: Added results.
 
 ## Submit results
 
@@ -74,9 +74,9 @@ or use the form below TBD
 
 These values are used as input in the R *meta* package's metagen function.
 
-For more information, check:
-
-[Doing Meta-Analysis with R: A Hands-On Guide](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/)
+>For more information, check:
+>
+>[Doing Meta-Analysis with R: A Hands-On Guide](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/)
 
 ## Forest plots
 
@@ -116,6 +116,7 @@ for (sheet in sheets){
 }
 nmetrics.df <- data.frame(cbind(ntechniques, nmetrics))
 colnames(nmetrics.df) <- c('Metric', 'Count')
+nmetrics.df <- nmetrics.df[order(-unlist(nmetrics.df$Count)),]
 ```
 <center>
 <div style="background-color:rgba(63, 237, 40, 0.1);">

@@ -1,7 +1,7 @@
 
 # **OSATS**
 
-OSATS is a evaluation instrument that consists of a grading scale and a checklist.
+OSATS is a evaluation instrument that consists of a grading scale and a checklist. Used to grade performance in surgical training tasks. Grading is done by expert surgeons, often from video recordings of the training task.
 
 ## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}

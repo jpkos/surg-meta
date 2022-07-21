@@ -1,7 +1,7 @@
 
 # **Tool Acceleration**
 
-Tool acceleration measures how much the tool/tools accelerate during the task.
+Tool acceleration measures how much the tool/tools accelerate during the task. Can be measured with accelerometers or by detecting the surgical instruments from videos. 
 
 ## Studies
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
