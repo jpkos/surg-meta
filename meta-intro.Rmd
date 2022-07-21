@@ -46,7 +46,7 @@ Example metrics that will be most likely included (Bolded ones have priority)
 
 Full list of papers and metrics can be found in the excel file shared in the repo:
 
->[Link to Github repo](https://github.com/jpkos/surg-mveta)
+>[Link to Github repo](https://github.com/jpkos/surg-meta)
 >Here you can find an excel file with all the included studies.
 
 > *Last update: 21.7.2022.*: Added results.
