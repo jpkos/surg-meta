@@ -12,6 +12,12 @@ jani.koskinen@uef.fi
 If you find this useful, you can reference this repository with the title:
 
 > Charting Surgical Skill Evaluation Methods: An informal meta-analysis
+> 2022
+> github.com/jpkos/surg-meta/
+> Jani Koskinen
+> School of Computing
+> University of Eastern Finland
+> 
 
 Disclaimer: This work has not been peer-reviewed (yet). Cannot guarantee that there are no mistakes. Conclusions drawn from the results may be wrong.
 
