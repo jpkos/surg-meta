@@ -7,7 +7,7 @@ https://jpkos.github.io/surg-meta/
 
 If you have any comments, suggestions, or know some cool result that can be added, feel free to contact me at 
 
-jani.koskinen@uef.fi
+jani.koskinen [at] uef.fi
 
 If you find this useful, you can reference this repository with the title:
 
