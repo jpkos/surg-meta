@@ -169,7 +169,7 @@ library(ggplot2)
 library(plotly)
 ```
 
-How many samples needed at some effect size d? At alpha = 0.05 and power = 0.8 and using t-test. Assuming independent trials (e.g. no multiple measurements from same participants etc.)
+One advantage of compiling results from different studies is that we can use the pooled effect sizes to estimate sample sizes for future studies. I.e., How many samples needed at some effect size d? Assuming independent trials (e.g. no multiple measurements from same participants etc.)
 
 ```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
 #TBD: teach yourself how to do this more easier in R
