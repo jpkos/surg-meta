@@ -19,7 +19,7 @@ groups' results and discarded the others. If a study included more than 1 task, 
 
 **Many papers did report means and standard deviations explicitly, so they had to be estimated from boxplots/barplots, or by some other means**
 
-For example, sometimes studies reported only mean or median, but no SE/SD. I estimated the SD/SE in those cases based e.g. on the SD of some other similar metric that they reported, or the SD of previous results for the same metric. **See the excel file for notes on each study.**
+For example, sometimes studies reported only mean or median, but no SE/SD. I estimated the SD/SE in those cases based e.g. on the SD of some other similar metric that they reported, or the SD of previous results for the same metric. **See the excel file (link below) for notes on each study.**
 
 May or may not be turned into more systematic meta-analysis later.
 
@@ -46,7 +46,8 @@ Example metrics that will be most likely included (Bolded ones have priority)
 
 Full list of papers and metrics can be found in the excel file shared in the repo:
 
-[Link to Github repo](https://github.com/jpkos/surg-mveta)
+>[Link to Github repo](https://github.com/jpkos/surg-mveta)
+>Here you can find an excel file with all the included studies.
 
 > *Last update: 21.7.2022.*: Added results.
 
@@ -210,6 +211,8 @@ TEPR = Task-Evoked Pupil Reaction/Dilation (Esimated without one outlier study r
 TJ = Tool Jerk
 
 TF = Tool Force
+
+**You can hover your mouse over the plot to see more details, zoom in etc.**
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
 p <- ggplot(data=df.sample, aes(x=effect_size, y=sample_size, color=as.factor(power))) + geom_line() + scale_y_continuous(breaks = scales::pretty_breaks(n = 20)) + scale_x_continuous(breaks = scales::pretty_breaks(n = 20)) + labs(x="Effect size d", y="Sample size n", color="Power") + 
