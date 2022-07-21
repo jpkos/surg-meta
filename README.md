@@ -24,7 +24,7 @@ If you find this useful, you can reference this repository with the title:
 > University of Eastern Finland
 > 
 
-**Disclaimer: This work has not been peer-reviewed (yet). Cannot guarantee that there are no mistakes. Conclusions drawn from the results may be wrong.
+**Disclaimer: This work has not been peer-reviewed (yet). Cannot guarantee that there are no mistakes. Conclusions drawn from the results may be wrong.**
 
 Jani Koskinen
 
