@@ -2,10 +2,10 @@
 
 Tool idle time measures how long the tools were not being used, either as time or as fraction of the complete task time.
 
-Idle time (IT) can be measured in different ways, but the common theme is that we compare the time when tools are actively used ($T_a$) with the total task time $T$.
+Idle time (IT) can be measured in different ways, but the common theme is that we compare the time when tools are actively used ($T_a$) with the time when they are not actively being used $T_{na}$.
 
 $$
-IT = \frac{T_a}{T}
+IT = \frac{T_{na}}{T_a + T_{na}} = \frac{T_{na}}{T_{total}}
 $$
 
 ## Studies
