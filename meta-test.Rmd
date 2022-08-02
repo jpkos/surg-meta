@@ -1,0 +1,128 @@
+
+
+# **Testing**
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Testing shiny stuff
+
+
+
+```{r, results='hide', message=FALSE, echo=FALSE, warning=FALSE}
+library(meta)
+library(esc)
+library(tidyverse)
+library(stargazer)
+library(readxl)
+library(knitr)
+library(lme4)
+library(pwr)
+library(ggplot2)
+library(plotly)
+library(shiny)
+```
+
+```{r, message=FALSE, echo=FALSE, warning=FALSE,}
+data_path <- 'data/surgical_metrics.xlsx'
+sheets <- excel_sheets(data_path)
+metric_choices = list()
+i<-1
+for (sheet in sheets){
+  nrx <- nrow(read_excel(data_path, sheet=sheet))
+  if (nrx<5) next
+  metric_choices[[i]] <- sheet
+  i <- i + 1
+  #cat(sheet, ":", nrx, "\n")
+}
+```
+
+
+```{r, message=FALSE, echo=FALSE, warning=FALSE, fig.height=10}
+
+# Define UI for dataset viewer app ----
+ui <- fluidPage(
+
+  # App title ----
+  titlePanel("ShinyApp testing (beta)"),
+
+  # Sidebar layout with a input and output definitions ----
+  sidebarLayout(
+
+    # Sidebar panel for inputs ----
+    sidebarPanel(
+
+      # Input: Selector for choosing dataset ----
+      selectInput(inputId = "dataset",
+                  label = "Choose a dataset:",
+                  choices = metric_choices),
+    ),
+
+    # Main panel for displaying outputs ----
+    mainPanel(
+
+      # Output: Verbatim text for data summary ----
+      tabsetPanel(
+        tabPanel("Summary", verbatimTextOutput("summary")),
+      
+        tabPanel("Forest plot", plotOutput(outputId="forest", height = 720, width = 640)),
+        
+        tabPanel("Publications", tableOutput("publications"))
+      )
+    )
+  )
+)
+
+# Define server logic to summarize and view selected dataset ----
+server <- function(input, output) {
+  # Return the requested dataset ----
+  datasetInput <- reactive({
+    # switch(input$dataset,
+    #        "task_time" = read_excel('data/surgical_metrics.xlsx', sheet='task_time'),
+    #        "tool_force" = read_excel('data/surgical_metrics.xlsx', sheet='tool_force'))
+    read_excel('data/surgical_metrics.xlsx', sheet=input$dataset)
+
+  })
+  # Generate a summary of the dataset ----
+  output$summary <- renderPrint({
+    df <- datasetInput()
+    m <- metagen(TE=g,
+         seTE=SDg,
+         studlab=Author,
+         data=df,
+         sm="SMD",
+         fixed=FALSE,
+         random=TRUE,
+         method.tau="REML",
+         hakn=TRUE)
+    summary(m)
+  })
+  
+  output$publications <- renderTable({
+    df <- datasetInput()
+    df[,c("Author", "Year", "Study", "Journal", "Note")]
+  })
+
+  #
+  output$forest <- renderPlot({
+    df <- datasetInput()
+    m <- metagen(TE=g,
+             seTE=SDg,
+             studlab=Author,
+             data=df,
+             sm="SMD",
+             fixed=FALSE,
+             random=TRUE,
+             method.tau="REML",
+             hakn=TRUE)
+    forest.meta(m,sortvar=g, prediction=TRUE, prin.tau2=TRUE)
+  })
+
+}
+
+# Create Shiny app ----
+shinyApp(ui = ui, server = server, options=list(height=1024))
+```
+
