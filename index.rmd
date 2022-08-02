@@ -9,7 +9,7 @@ output:
     toc_float: true
     toc_depth: 2
     fig_caption: true
-
+runtime: shiny
 ---
 
 <style>
@@ -68,6 +68,11 @@ text-align: justify}
 ```{r child = "meta-sei-osats.Rmd"}
 
 ```
+
+```{r child = "meta-test.Rmd"}
+
+```
+
 
 
 

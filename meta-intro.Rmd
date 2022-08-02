@@ -193,7 +193,7 @@ for (ps in pss){
 }
 df.sample <- data.frame(cbind(as.numeric(ns_full), as.numeric(ds)), as.numeric(pslist))
 colnames(df.sample) <- c("sample_size", "effect_size", "power")
-
+write.csv(df.sample, ('data/powers.csv'))
 ```
 
 Hover mouse over the points in the plot to see the values. **Sample size is for group, so you need this many samples per group**
@@ -226,6 +226,10 @@ p <- ggplot(data=df.sample, aes(x=effect_size, y=sample_size, color=as.factor(po
 
 ggplotly(p)
 ```
+
+<div class="w3-container w3-red">
+  <p>The w3-container class is an important w3.CSS class.</p>
+</div>
 
 
 

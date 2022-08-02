@@ -1,5 +1,3 @@
-
-
 # **Task Time**
 
 Task time is the time taken to complete a task. Task can be short like a single knot or some longer complex task. This metric is by far the most commonly reported result, as it is often reported even when the focus of the study is on some other metric. Typically measured in seconds or minutes.
